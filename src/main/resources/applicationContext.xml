@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!--
+    <bean id="us" class="com.tiwson.spring_01.service.UserServiceImpl" scope="singleton" init-method="init" destroy-method="destroy"/>
+
+    <bean id="us" class="com.tiwson.spring_01.factory.StaticFactory" factory-method="createUs" />
+    -->
+
+    <bean id="df" class="com.tiwson.spring_01.factory.DynamicFactory" />
+    <bean id="us" factory-bean="df" factory-method="createUs" />
+
+</beans>
